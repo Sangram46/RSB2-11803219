@@ -1,0 +1,135 @@
+
+
+1..... 
+function userid_validation(uid,mx,my)
+{
+var uid_len = uid.value.length;
+if (uid_len == 0 || uid_len >= my || uid_len < mx)
+{
+alert("welcome to the world "+mx+" to "+my);
+uid.focus();
+return false;
+}
+return true;
+}
+
+
+
+
+2......
+<script>
+ 
+class node
+{
+    constructor(data)
+    {
+        this.left = null;
+        this.right = null;
+        this.data = data;
+    }
+}
+ 
+let q = [];
+ 
+
+function bstit(root)
+{
+     
+    let curr = root;
+     
+    while (curr != null)
+    {
+        q.push(curr);
+        curr = curr.left;
+    }
+}
+ 
+function curr()
+{
+    return q[q.length - 1];
+}
+ 
+function next()
+{
+    let curr = q[q.length - 1].right;
+    q.pop();
+     
+    while (curr != null)
+    {
+        q.push(curr);
+        curr = curr.left;
+    }
+}
+ 
+
+function isEnd()
+{
+    return (q.length == 0);
+}
+ 
+// Function to test the iterator
+function iterate()
+{
+    while (!isEnd())
+    {
+        document.write(curr().data + " ");
+        next();
+    }
+}
+ 
+
+let root = new node(5);
+root.left = new node(3);
+root.right = new node(7);
+root.left.left = new node(2);
+root.left.right = new node(4);
+root.right.left = new node(6);
+root.right.right = new node(8);
+ 
+
+bstit(root);
+ 
+ 
+</script>
+
+3...........
+<script>
+ 
+ 
+function nCr(n, r)
+{
+    return fact(n) / (fact(r) * fact(n - r));
+}
+ 
+
+function fact(n)
+{
+    var res = 1;
+    for (var i = 2; i <= n; i++)
+        res = res * i;
+    return res;
+}
+ 
+
+var n = 100, r = 2;
+document.write(nCr(n, r));
+ 
+ 
+</script>
+
+4.......
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
+
+function tick() {
+  const element = (
+    <div>
+      <h1>Lovely Professional University (LPU) is a Private University situated on the outskirts of Jalandhar, Punjab. 
+It is the largest single-campus university in India, with more than 30,000 students, over 4000 faculties and staff, 
+offering more than 200 programs. Recognized by UGC and is also a member of AIU</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  root.render(element);
+}
